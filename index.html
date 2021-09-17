@@ -12,7 +12,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-info navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-info navbar-dark sticky-top">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">Patient Information Form</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span
@@ -34,11 +34,12 @@
     </nav>
 
     <!-- Form -->
-    <section class=" bg-light text-dark p-5 ">
+    <section class="bg-light text-dark p-5">
         <div class="container">
-            <form>
+            <form name="Patient Information" class="needs-validation" novalidate action="https://www.w3schools.com/action_page.php"
+                method="POST">
                 <!-- Personal information -->
-                <div class="h3 pb-5">Personal Information</div>
+                <h3 class="h3 pb-5 " id="Personal">Personal Information</h3>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="firstname">First Name</label>
@@ -52,11 +53,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="Birthdate">Date of Birth</label>
-                        <input type="date" class="form-control" placeholder="First name" id="Birthdate">
+                        <input type="date" class="form-control" id="Birthdate">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputState">Gender</label>
-                        <select id="inputState" class="form-control">
+                        <label for="gender">Gender</label>
+                        <select id="gender" class="form-control">
                             <option selected>Select Gender...</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -66,7 +67,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
@@ -152,7 +153,7 @@
                     </div>
                 </div>
                 <!-- Doctor Information -->
-                <div class="h3 py-5">Doctor Information</div>
+                <div class="h3 py-5" id="Doctor">Doctor Information</div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="docname">Family Doctor Name</label>
@@ -167,15 +168,113 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="Specialist">Specialist</label>
-                        <input type="text" class="form-control" id="docname" placeholder="Specialist">
+                        <input type="text" class="form-control" id="Specialist" placeholder="Specialist">
                     </div>
-                   
+                    <div class="form-group col-md-6">
+                        <label for="docaddress">Address</label>
+                        <input type="text" class="form-control" id="docaddress" placeholder="Address">
+                    </div>
+                </div>
+                <!-- medical Information -->
+                <div class="h3 py-5" id="Medical">Medical Information</div>
+                <div class="form-group">
+                    <label for="allergies">Please list any drug allergies</label>
+                    <textarea class="form-control" id="allergies"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Have you ever had (Please check all that apply)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Anemia" id="Anemia">
+                        <label class="form-check-label" for="Anemia">
+                            Anemia
+                        </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="checkbox" value="Asthma" id="Asthma">
+                        <label class="form-check-label" for="Asthma">
+                            Asthma </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="checkbox" value="Cancer" id="Cancer">
+                        <label class="form-check-label" for="Cancer">
+                            Cancer </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="checkbox" value="Diabetes" id="Diabetes">
+                        <label class="form-check-label" for="Diabetes">
+                            Diabetes
+
+                        </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="checkbox" value="HeartDisease" id="HeartDisease">
+                        <label class="form-check-label" for="HeartDisease">
+                            Heart Disease </label>
+                    </div>
+                    <div class="form-check">
+
+                        <input class="form-check-input" type="checkbox" value="High Blood Pressure"
+                            id="HighBloodPreasure">
+                        <label class="form-check-label" for="HighBloodPreasure">
+                            High Blood Pressure
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="Otherillnesses">Other Illnesses</label>
+                    <textarea class="form-control" id="Otherillnesses"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="OTC">Over The Counter Medicine</label>
+                        <input type="text" class="form-control" id="OTC" placeholder="Over The Counter Medicine">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Prescriptions">Prescriptions</label>
+                        <input type="text" class="form-control" id="Prescriptions" placeholder="Prescriptions">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="surgeries">Surgeries</label>
+                        <input type="text" class="form-control" id="surgeries" placeholder="Surgeries">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you smoke tobacco?</label>
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                            value="yes">
+                        <label class="form-check-label" for="inlineRadio3">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4"
+                            value="No">
+                        <label class="form-check-label" for="inlineRadio4">No</label>
+                    </div>
                 </div>
 
-
-
+                <div class="form-group">
+                    <label>Do you exercise regularly?</label>
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="yes">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="No">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <input class="btn btn-info btn- btn-md " type="submit" value="Submit" name="submit">
+                </div>
             </form>
-
         </div>
     </section>
 
